@@ -4,8 +4,12 @@ pipeline {
     stage('TEST') {
       steps {
         echo 'Hello'
+        echo $sosa
       }
     }
 
+  }
+  environment {
+    sosa = 'lity'
   }
 }
