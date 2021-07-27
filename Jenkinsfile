@@ -4,7 +4,7 @@ pipeline {
     stage('TEST') {
       steps {
         echo 'Hello'
-        echo $sosa
+        echo "${sosa}"
       }
     }
 
