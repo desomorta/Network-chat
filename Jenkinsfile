@@ -2,9 +2,21 @@ pipeline {
   agent any
   stages {
     stage('TEST') {
-      steps {
-        echo 'Hello'
-        echo "${sosa}"
+      parallel {
+        stage('TEST') {
+          steps {
+            echo 'Hello'
+            echo "${sosa}"
+          }
+        }
+
+        stage('Test2') {
+          steps {
+            sh '''sleep 10
+echo done'''
+          }
+        }
+
       }
     }
 
